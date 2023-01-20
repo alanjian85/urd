@@ -1,4 +1,7 @@
 # Urd
+
+[![Join the chat at https://gitter.im/alanjian85/urd](https://badges.gitter.im/alanjian85/urd.svg)](https://gitter.im/alanjian85/urd?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 *A Unix-like and microkernel-based operating system for RISC-V*
 
 <img src="docs/assets/dark_logo.jpg" alt="Dark Logo" width="130"> <img src="docs/assets/normal_logo.jpg" alt="Normal Logo" width="130"> <img src="docs/assets/light_logo.jpg" alt="Light Logo" width="130">
