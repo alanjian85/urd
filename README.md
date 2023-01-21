@@ -4,7 +4,7 @@
 
 *A Unix-like and microkernel-based operating system for RISC-V*
 
-<img src="docs/assets/dark_logo.jpg" alt="Dark Logo" width="130"> <img src="docs/assets/normal_logo.jpg" alt="Normal Logo" width="130"> <img src="docs/assets/light_logo.jpg" alt="Light Logo" width="130">
+<img src="docs/assets/dark_logo_mini.jpg" alt="Dark Logo" width="128" height="128"> <img src="docs/assets/normal_logo_mini.jpg" alt="Normal Logo" width="128" height="128"> <img src="docs/assets/light_logo_mini.jpg" alt="Light Logo" width="128" height="128">
 
 ## What is Urd?
 Urd is an ecosystem that is built around a RV64 microkernel, which is designed to be Unix-like. The Urd kernel comes with its own allocator, scheduler and system calls. It also has a customized virutal memory system, device driver interface and file system. Because the kernel is only intended to run on one platform, its implementation should be fairly simple and efficient.
