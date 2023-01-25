@@ -28,8 +28,4 @@ _start:
 2:
     call main
 
-/* An infinite loop with interrupt waiting is used to save energy */
-    .globl halt
-halt:
-    wfi
     j halt

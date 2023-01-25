@@ -7,7 +7,7 @@ LDFLAGS = -nostdlib
 #                  beyond the 32-bit address space
 # -ffreestanding: Assert that compilation targets a freestanding
 #                 environment
-CFLAGS = -mcmodel=medany -ffreestanding
+CFLAGS = -std=gnu11 -mcmodel=medany -ffreestanding
 
 OBJSDIR = $(BUILDDIR)/objs
 

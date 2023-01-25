@@ -3,6 +3,11 @@
 
 #define EOF (-1)
 
+_Noreturn void halt(void) {
+    for (;;)
+        asm("wfi");
+}
+
 int putchar(char c) {
     // Put EID #0x01 in the register a7
     register int a7 asm("a7") = 0x01;
