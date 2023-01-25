@@ -22,7 +22,7 @@ githooks:
 export
 # Distinguish between filenames and target names
 .PHONY: $(SUBDIRS)
-$(SUBDIRS): $(BUILDDIR)
+$(SUBDIRS): | $(BUILDDIR)
 	$(MAKE) -C $@
 
 # Create the build directory if it doesn't already exist, which is

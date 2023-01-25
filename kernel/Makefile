@@ -23,10 +23,10 @@ all: $(BUILDDIR)/kernel.elf
 $(BUILDDIR)/kernel.elf: kernel.ld $(OBJS)
 	$(LD) -T kernel.ld $(OBJS) $(LDFLAGS) -o $@
 
-$(OBJSDIR)/%.o: %.S $(OBJSDIR)
+$(OBJSDIR)/%.o: %.S | $(OBJSDIR)
 	$(CC) $< -I $(INCDIR) $(CFLAGS) -c -o $@
 
-$(OBJSDIR)/%.o: %.c $(OBJSDIR)
+$(OBJSDIR)/%.o: %.c | $(OBJSDIR)
 	$(CC) $< -I $(INCDIR) $(CFLAGS) -c -o $@
 
 # Create the directory of objects if it doesn't already exist, which is
