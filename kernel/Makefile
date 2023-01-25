@@ -9,14 +9,11 @@ LDFLAGS = -nostdlib
 #                 environment
 CFLAGS = -std=gnu11 -mcmodel=medany -ffreestanding
 
-# Every object file must be prepended with "$(OBJSDIR)/"
-OBJS = \
-	$(OBJSDIR)/entry.o \
-	$(OBJSDIR)/main.o
-
-DEPS = \
-    $(OBJSDIR)/entry.d \
-    $(OBJSDIR)/main.d
+# Automatic source file matching and substituting
+SRCS = $(wildcard *.S *.c)
+OBJS = $(patsubst %.S,%.o,$(SRCS))
+OBJS := $(patsubst %.c,%.o,$(OBJS))
+DEPS = $(patsubst %.o,%.d,$(OBJS))
 
 all: $(BUILDDIR)/kernel.elf
 
