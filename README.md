@@ -1,6 +1,7 @@
 # Urd
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Join the chat at https://gitter.im/urd-os/community](https://badges.gitter.im/urd-os/community.svg)](https://gitter.im/urd-os/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build CI](https://github.com/alanjian85/urd/actions/workflows/build.yml/badge.svg)](https://github.com/alanjian85/urd/actions)
 
 *A Unix-like and microkernel-based operating system for RISC-V*
 
