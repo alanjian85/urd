@@ -9,7 +9,6 @@ LD = $(CROSS_COMPILE)ld
 
 SUBDIRS = kernel
 # Must be absolute path
-INCDIR = $(CURDIR)/include
 BUILDDIR = $(CURDIR)/build
 OBJSDIR = $(BUILDDIR)/objs
 
