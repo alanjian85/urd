@@ -11,6 +11,7 @@ SUBDIRS = kernel
 # Must be absolute path
 INCDIR = $(CURDIR)/include
 BUILDDIR = $(CURDIR)/build
+OBJSDIR = $(BUILDDIR)/objs
 
 all: githooks $(SUBDIRS)
 
@@ -29,6 +30,7 @@ $(SUBDIRS): | $(BUILDDIR)
 # required by all sub-directories
 $(BUILDDIR):
 	mkdir -p $(BUILDDIR)
+	mkdir -p $(OBJSDIR)
 
 # Remove the build directory directly to clean the generated files
 clean:
