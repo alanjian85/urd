@@ -45,7 +45,13 @@ SECTIONS
     /* Ensure next section is page-aligned */
     . = ALIGN(0x1000);
     .bss : {
+        /* Provide the start and the end of BSS to allow the entry
+         * routine to clear BSS */
+        PROVIDE(_bss_start = .);
         *(.bss .bss.*)
+        /* Align the end to the size of registers for faster memory writing */
+        . = ALIGN(8);
+        PROVIDE(_bss_end = .);
     }
 
     /* Map to the extern variable "end" in C */
