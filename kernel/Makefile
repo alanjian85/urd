@@ -11,8 +11,8 @@ CFLAGS = -std=gnu11 -mcmodel=medany -ffreestanding
 
 # Automatic source file matching and substituting
 SRCS = $(wildcard *.S *.c)
-OBJS = $(patsubst %.S,%.o,$(SRCS))
-OBJS := $(patsubst %.c,%.o,$(OBJS))
+OBJS = $(patsubst %.S,$(OBJSDIR)/%.o,$(SRCS))
+OBJS := $(patsubst %.c,$(OBJSDIR)/%.o,$(OBJS))
 DEPS = $(patsubst %.o,%.d,$(OBJS))
 
 all: $(BUILDDIR)/kernel.elf
