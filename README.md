@@ -8,14 +8,14 @@
 <img src="docs/assets/dark_logo.svg" alt="Dark Logo" width="128" height="128"> <img src="docs/assets/normal_logo.svg" alt="Normal Logo" width="128" height="128"> <img src="docs/assets/light_logo.svg" alt="Light Logo" width="128" height="128">
 
 ## What is Urd?
-Urd is an ecosystem that is built around a RV64 microkernel, which is designed to be Unix-like. The Urd kernel comes with its own allocator, scheduler and system calls. It also has a customized virutal memory system, device driver interface and file system. Because the kernel is only intended to run on one platform, its implementation should be fairly simple and efficient.
+Urd is an ecosystem that is built around a 64-bit [RISC-V](https://riscv.org/) microkernel, which is designed to be [Unix-like](https://en.wikipedia.org/wiki/Unix-like). The Urd kernel comes with its own allocator, scheduler and system calls. It also has a customized virutal memory system, device driver interface and file system. Because the kernel is only intended to run on one platform, its implementation should be fairly simple and efficient.
 
-Urd also has its own shell, text editor, and resource monitor, among other things. However, it is not intended to create a compiler for this operating system because building software with the ported [GNU toolchain](https://en.wikipedia.org/wiki/GNU_toolchain) should be quite convenient. Some functions in [glibc](https://www.gnu.org/software/libc/) may need to be modified in order to conform to the Urd environment.
+Urd also has its own shell, text editor, and resource monitor, among other things. However, it is not intended to create a dedicated compiler for this operating system because building software with the ported [GNU toolchain](https://en.wikipedia.org/wiki/GNU_toolchain) should be quite convenient. Some functions in [glibc](https://www.gnu.org/software/libc/) may need to be modified in order to conform to the Urd environment.
 
 ## Hardware Requirements
 Urd is designed to be used in conjunction with the [StarFive VisionFive 2 single board computer](https://www.starfivetech.com/en/site/boards). It features a 64-bit SoC with the RV64GC ISA as well as up to 8GB of LPDDR4 memory. There is also a TF card slot and an on-board flash memory for firmware storage. For video output, it's integrated with the [IMG BXE-4-32 MC1 GPU](https://www.imaginationtech.com/product/img-bxe-4-32-mc1/) and a HDMI 2.0 port. The I/O peripherals are two USB 2.0 ports, two USB 3.0 ports, two RJ45 ethernet port and a 40 pin GPIO header. Although not all of the above-mentioned devices are supported by Urd, the system is tailored to this specific computer.
 
-In order to run and test Urd, you should prepare the following items:
+In order to run and test Urd, the following items should be prepared:
 * A microSD Card
 * A StarFive VisionFive 2 board
 * A 5V DC USB-C Power Supply
