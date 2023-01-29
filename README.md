@@ -24,6 +24,29 @@ In order to run and test Urd, you should prepare the following items:
 * A HDMI Cable
 * A Screen with HDMI Support
 
+## Build Instructions
+A cross-compiler or toolchain targeting RV64GC is required to build Urd. [GNU Make](https://www.gnu.org/software/make/) should also be installed in order for each subsystem to be built automatically. [Git](https://git-scm.com/) is also required to retrieve the source code from the Internet.
+
+The following commands install the dependencies on various platforms:
+
+[Ubuntu](https://ubuntu.com/):
+```sh
+sudo apt-get install git make gcc-riscv64-linux-gnu
+```
+[Arch Linux](https://archlinux.org/):
+```sh
+sudo pacman -S --needed git make riscv64-linux-gnu-gcc
+```
+
+The repository must first be cloned, and GNU Make must be run with the cross-compiler's prefix.
+
+```sh
+git clone https://github.com/alanjian85/urd & cd urd
+make CROSS_COMPILE=riscv64-linux-gnu-
+```
+
+The output file `kernel.elf` can be found in the directory `build` alongside the directory of object files.
+
 ## References
 * [Computer Systems: A Programmer's Perspective](https://csapp.cs.cmu.edu/)
 * [Operating System Design - The Xinu Approach](https://xinu.cs.purdue.edu/)
