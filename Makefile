@@ -7,30 +7,36 @@ CC = $(CROSS_COMPILE)gcc
 AS = $(CROSS_COMPILE)as
 LD = $(CROSS_COMPILE)ld
 
-SUBDIRS = kernel
+BUILD = build
+OBJS = $(BUILD)/objs
 # Must be absolute path
-BUILDDIR = $(CURDIR)/build
-OBJSDIR = $(BUILDDIR)/objs
+BUILDDIR = $(CURDIR)/$(BUILD)
+OBJSDIR = $(CURDIR)/$(OBJS)
+
+SUBDIRS = kernel
 
 all: githooks $(SUBDIRS)
 
 # Use a custom directory for Git hooks
 githooks:
-	git config core.hooksPath scripts
+	@git config core.hooksPath scripts
 
 # Export all the defined variables to the sub-make
 export
 # Distinguish between filenames and target names
 .PHONY: $(SUBDIRS)
 $(SUBDIRS): | $(BUILDDIR)
-	$(MAKE) -C $@
+	@$(MAKE) -C $@
 
 # Create the build directory if it doesn't already exist, which is
 # required by all sub-directories
 $(BUILDDIR):
-	mkdir -p $(BUILDDIR)
-	mkdir -p $(OBJSDIR)
+	@printf " MKDIR\t$(BUILD)\n"
+	@mkdir -p $(BUILDDIR)
+	@printf " MKDIR\t$(OBJS)\n"
+	@mkdir -p $(OBJSDIR)
 
 # Remove the build directory directly to clean the generated files
 clean:
-	rm -rf $(BUILDDIR)
+	@printf " RM\t$(BUILD)\n"
+	@rm -rf $(BUILDDIR)
