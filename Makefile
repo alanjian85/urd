@@ -28,8 +28,8 @@ export
 $(SUBDIRS): | $(BUILDDIR)
 	@$(MAKE) -C $@
 
-# Create the build directory if it doesn't already exist, which is
-# required by all sub-directories
+# Create the build directory if it doesn't already exist, which is required by
+# all sub-directories
 $(BUILDDIR):
 	@printf " MKDIR\t$(BUILD)\n"
 	@mkdir -p $(BUILDDIR)

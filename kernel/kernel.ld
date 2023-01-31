@@ -6,12 +6,12 @@ ENTRY(_start)
 
 SECTIONS
 {
-    /* 0x80000000 is the entry's address and the start of all
-     * instructions and data. */
-    /* NOTE: Not the default value of "kernel_addr_r" 0x40200000 in
-     * U-boot in StarFive VisionFive 2. 0x40200000 is the address of the
-     * loaded ELF file. So, rather than overwriting the existing ELF image,
-     * map the binary to a free region in the main memory. */
+    /* 0x80000000 is the entry's address and the start of all instructions and
+     * data. */
+    /* NOTE: Not the default value of "kernel_addr_r" 0x40200000 in U-boot in
+     * StarFive VisionFive 2. 0x40200000 is the address of the loaded ELF file.
+     * So, rather than overwriting the existing ELF image, map the binary to a
+     * free region in the main memory. */
     . = 0x80000000;
 
     /* Ensure next section is page-aligned */
@@ -45,8 +45,8 @@ SECTIONS
     /* Ensure next section is page-aligned */
     . = ALIGN(0x1000);
     .bss : {
-        /* Provide the start and the end of BSS to allow the entry
-         * routine to clear BSS */
+        /* Provide the start and the end of BSS to allow the entry routine to
+         * clear BSS */
         PROVIDE(_bss_start = .);
         *(.bss .bss.*)
         /* Align the end to the size of registers for faster memory writing */

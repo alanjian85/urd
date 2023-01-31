@@ -6,10 +6,9 @@ SRCDIR = src
 
 # -nostdlib: Don't link to any of the standard library object files
 LDFLAGS = -nostdlib
-# -mcmodel=medany: With this option, the generated code can access data
-#                  beyond the 32-bit address space
-# -ffreestanding: Assert that compilation targets a freestanding
-#                 environment
+# -mcmodel=medany: With this option, the generated code can access data beyond
+# the 32-bit address space
+# -ffreestanding: Assert that compilation targets a freestanding environment
 CFLAGS = -std=gnu11 -mcmodel=medany -ffreestanding
 
 # Automatic source file matching and substituting
@@ -20,8 +19,8 @@ DEPS = $(patsubst %.o,%.d,$(OBJS))
 
 all: $(BUILDDIR)/kernel.elf
 
-# Link the object files with the customized linker script and output to
-# the build directory
+# Link the object files with the customized linker script and output to the
+# build directory
 $(BUILDDIR)/kernel.elf: kernel.ld $(OBJS)
 	@printf " LD\t$(BUILD)/kernel.elf\n"
 	@$(LD) -T kernel.ld $(OBJS) $(LDFLAGS) -o $@
