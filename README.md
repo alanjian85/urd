@@ -45,7 +45,15 @@ git clone https://github.com/alanjian85/urd & cd urd
 make CROSS_COMPILE=riscv64-linux-gnu-
 ```
 
-The output file `kernel.elf` can be found in the directory `build` alongside the directory of object files.
+The output file `kernel.elf` can be found in the directory `build` alongside the directory of object files. Also, [GitHub Actions](https://github.com/features/actions) is configured to automatically compile and upload the produced `kernel.elf` for each commit. The artifact can be found by going to **Actions -> An Arbitrary Workflow -> Artifacts**.
+
+## Run And Test
+To run and test Urd, a microSD card should be provided as a carrier of the kernel image. First, create a single FAT32 partition on the card. Second, add `kernel.elf` to the card's root. Third, put the card into the TF card slot on the board. The last step is to execute the following commands in the shell of [U-boot](https://u-boot.readthedocs.io/en/latest/) by opening it using a UART terminal.
+
+```sh
+load mmc 1:1 ${kernel_addr_r} kernel.elf
+bootelf ${kernel_addr_r}
+```
 
 ## References
 * [Computer Systems: A Programmer's Perspective](https://csapp.cs.cmu.edu/)
