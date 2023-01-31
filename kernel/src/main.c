@@ -3,8 +3,8 @@
 
 #include <stdlib.h>
 
-#include "kernel.h"
-#include "uart.h"
+#include "urd/kernel.h"
+#include "urd/uart.h"
 
 int main(void) {
     uart_init(115200);

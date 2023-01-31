@@ -1,12 +1,12 @@
 // SPDX-FileCopyrightText: © 2023 Alan Jian <alanjian85@outlook.com>
 // SPDX-License-Identifier: GPL-3.0
 
-#include "uart.h"
+#include "urd/uart.h"
 
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "mmio.h"
+#include "urd/mmio.h"
 
 #define UART_BASE (0x10000000)
 
