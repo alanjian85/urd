@@ -12,10 +12,13 @@ void halt(void) {
 }
 
 int kputc(char c) {
+    if (c == '\n')
+        uart_putc('\r');
     return uart_putc(c);
 }
 
 int kputs(const char *s) {
     for (; *s != '\0'; ++s)
         kputc(*s);
+    return 0;
 }

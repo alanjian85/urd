@@ -46,5 +46,5 @@ int uart_putc(char c) {
     while ((uart_read_reg(UART_LSR) & UART_LSR_THRE) == 0)
         ;
     uart_write_reg(UART_THR, c);
-    return 0;
+    return (unsigned char) c;
 }

@@ -8,6 +8,6 @@
 
 int main(void) {
     uart_init(115200);
-    kputs("Hello, Urd!\r\n");
+    kputs("Hello, Urd!\n");
     return EXIT_SUCCESS;
 }
