@@ -21,6 +21,12 @@ all: githooks $(SUBDIRS)
 githooks:
 	@git config core.hooksPath scripts
 
+# Generate the documentation page using Doxygen
+.PHONY: docs
+docs:
+	@printf " DOXYGEN\n"
+	@doxygen
+
 # Export all the defined variables to the sub-make
 export
 # Distinguish between filenames and target names
