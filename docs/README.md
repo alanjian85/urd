@@ -56,7 +56,7 @@ bootelf ${kernel_addr_r}
 ```
 
 ## Code of Conduct
-See [docs/CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ## References
 * [Computer Systems: A Programmer's Perspective](https://csapp.cs.cmu.edu/)
