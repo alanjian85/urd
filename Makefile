@@ -46,3 +46,7 @@ $(BUILDDIR):
 clean:
 	@printf " RM\t$(BUILD)\n"
 	@rm -rf $(BUILDDIR)
+	@printf " RM\thtml\n"
+	@rm -rf html
+	@printf " RM\tlatex\n"
+	@rm -rf latex

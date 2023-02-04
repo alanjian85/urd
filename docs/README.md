@@ -5,7 +5,7 @@
 
 *A Unix-like and microkernel-based operating system for RISC-V*
 
-<img src="docs/assets/dark_logo.svg" alt="Dark Logo" width="128" height="128"> <img src="docs/assets/normal_logo.svg" alt="Normal Logo" width="128" height="128"> <img src="docs/assets/light_logo.svg" alt="Light Logo" width="128" height="128">
+<img src="dark_logo.svg" alt="Dark Logo" width="128" height="128"> <img src="normal_logo.svg" alt="Normal Logo" width="128" height="128"> <img src="light_logo.svg" alt="Light Logo" width="128" height="128">
 
 ## What is Urd?
 Urd is an ecosystem that is built around a 64-bit [RISC-V](https://riscv.org/) microkernel, which is designed to be [Unix-like](https://en.wikipedia.org/wiki/Unix-like). The Urd kernel comes with its own allocator, scheduler and system calls. It also has a customized virutal memory system, device driver interface and file system. Because the kernel is only intended to run on one platform, its implementation should be fairly simple and efficient.
@@ -55,6 +55,9 @@ load mmc 1:1 ${kernel_addr_r} kernel.elf
 bootelf ${kernel_addr_r}
 ```
 
+## Code of Conduct
+See [docs/CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+
 ## References
 * [Computer Systems: A Programmer's Perspective](https://csapp.cs.cmu.edu/)
 * [Operating System Design - The Xinu Approach](https://xinu.cs.purdue.edu/)
@@ -64,7 +67,7 @@ bootelf ${kernel_addr_r}
 * [The RISC-V Instruction Set Manual - Volume II: Privileged ISA](https://riscv.org/technical/specifications/)
 * [xv6: a simple, Unix-like teaching operating system](https://pdos.csail.mit.edu/6.828/2022/xv6.html)
 
-## [License (GPL-3.0)](LICENSE)
+## License (GPL-3.0)
 <a href="https://opensource.org/licenses/GPL-3.0" target="_blank">
 <img align="right" src="https://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png">
 </a>
