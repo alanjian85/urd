@@ -1,10 +1,11 @@
-<img src="dark_logo.svg" alt="Dark Logo" width="128" height="128"> <img src="normal_logo.svg" alt="Normal Logo" width="128" height="128"> <img src="light_logo.svg" alt="Light Logo" width="128" height="128">
+# Urd
+*A Unix-like and microkernel-based operating system for RISC-V*
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Join the chat at https://gitter.im/urd-os/community](https://badges.gitter.im/urd-os/community.svg)](https://gitter.im/urd-os/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build CI](https://github.com/alanjian85/urd/actions/workflows/build.yml/badge.svg)](https://github.com/alanjian85/urd/actions)
 
-*A Unix-like and microkernel-based operating system for RISC-V*
+<img src="dark_logo.svg" alt="Dark Logo" width="128" height="128"> <img src="normal_logo.svg" alt="Normal Logo" width="128" height="128"> <img src="light_logo.svg" alt="Light Logo" width="128" height="128">
 
 ## What is Urd?
 Urd is an ecosystem that is built around a 64-bit [RISC-V](https://riscv.org/) microkernel, which is designed to be [Unix-like](https://en.wikipedia.org/wiki/Unix-like). The Urd kernel comes with its own allocator, scheduler and system calls. It also has a customized virutal memory system, device driver interface and file system. Because the kernel is only intended to run on one platform, its implementation should be fairly simple and efficient.
