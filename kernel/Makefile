@@ -5,7 +5,7 @@ INCDIR = include
 SRCDIR = src
 
 # -nostdlib: Don't link to any of the standard library object files
-LDFLAGS = -nostdlib
+LDFLAGS = -nostdlib -lgcc
 # -std=gnu11: Comply with the GNU dialect of C11
 # -mcpu=cortex-a8: Set the target CPU model to ARM Cortex-A8, which is used by Beagle Bone Black
 # -ffreestanding: Assert that the compilation targets a freestanding environment
@@ -22,8 +22,8 @@ all: $(BUILDDIR)/kernel.elf
 # Link the object files with the customized linker script and output to the
 # build directory
 $(BUILDDIR)/kernel.elf: kernel.ld $(OBJS)
-	@printf " LD\t$(BUILD)/kernel.elf\n"
-	@$(LD) -T kernel.ld $(OBJS) $(LDFLAGS) -o $@
+	@printf " CC\t$(BUILD)/kernel.elf\n"
+	@$(CC) -T kernel.ld $(OBJS) $(LDFLAGS) -o $@
 
 $(OBJSDIR)/%.o: $(SRCDIR)/%.S
 	@printf " CC\t$<\n"

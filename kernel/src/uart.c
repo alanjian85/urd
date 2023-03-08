@@ -3,9 +3,6 @@
 
 #include "urd/uart.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-
 #include "urd/mmio.h"
 
 #define UART_BASE (0x44e09000)
@@ -31,10 +28,15 @@
 int uart_init(int baud_rate) {
     if (baud_rate <= 0)
         return -1;
+    unsigned int divisor = 3000000 / baud_rate;
+    // See if a 16-bit unsigned integer can express the divisor
+    if (divisor > 0xffff)
+        return -1;
     uart_write_reg(UART_LCR, 0x80); // Enable DLAB
-    // TODO: Calculate the appropriate divisor from the parameter baud_rate
-    uart_write_reg(UART_DLH, 0x00);
-    uart_write_reg(UART_DLL, 0x1a);
+    // Set the most significant and the least significant 8 bits of baud rate
+    // divisor respectively
+    uart_write_reg(UART_DLH, divisor >> 8 & 0xff);
+    uart_write_reg(UART_DLL, divisor & 0xff);
     uart_write_reg(UART_LCR, 0x00); // Disable DLAB
     uart_write_reg(UART_IER, 0x00); // Disable all interrupts
     uart_write_reg(UART_LCR, 0x03); // 8 bit mode, no parity, 1 stop bit
