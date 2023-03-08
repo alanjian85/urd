@@ -1,18 +1,16 @@
 /* Copyright (C) 2023 Alan Jian (alanjian85@outlook.com)
  * SPDX-License-Identifier: GPL-3.0 */
 
-OUTPUT_ARCH(riscv)
 ENTRY(_start)
 
 SECTIONS
 {
-    /* 0x80000000 is the entry's address and the start of all instructions and
+    /* 0x81000000 is the entry's address and the start of all instructions and
      * data. */
-    /* NOTE: Not the default value of "kernel_addr_r" 0x40200000 in U-boot in
-     * StarFive VisionFive 2. 0x40200000 is the address of the loaded ELF file.
-     * So, rather than overwriting the existing ELF image, map the binary to a
-     * free region in the main memory. */
-    . = 0x80000000;
+    /* NOTE: Instead of using the value of kernel_addr_r in U-boot, 0x81000000
+     * is used as the start address of the ELF file because if kernel_addr_r is
+     * used, the binary image will overwrite the loaded ELF file in memory. */
+    . = 0x81000000;
 
     /* Ensure next section is page-aligned */
     . = ALIGN(0x1000);
@@ -50,7 +48,7 @@ SECTIONS
         PROVIDE(_bss_start = .);
         *(.bss .bss.*)
         /* Align the end to the size of registers for faster memory writing */
-        . = ALIGN(8);
+        . = ALIGN(4);
         PROVIDE(_bss_end = .);
     }
 

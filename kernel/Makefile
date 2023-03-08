@@ -6,10 +6,10 @@ SRCDIR = src
 
 # -nostdlib: Don't link to any of the standard library object files
 LDFLAGS = -nostdlib
-# -mcmodel=medany: With this option, the generated code can access data beyond
-# the 32-bit address space
-# -ffreestanding: Assert that compilation targets a freestanding environment
-CFLAGS = -std=gnu11 -mcmodel=medany -ffreestanding
+# -std=gnu11: Comply with the GNU dialect of C11
+# -mcpu=cortex-a8: Set the target CPU model to ARM Cortex-A8, which is used by Beagle Bone Black
+# -ffreestanding: Assert that the compilation targets a freestanding environment
+CFLAGS = -std=gnu11 -mcpu=cortex-a8 -ffreestanding
 
 # Automatic source file matching and substituting
 SRCS = $(wildcard $(SRCDIR)/*.S $(SRCDIR)/*.c)

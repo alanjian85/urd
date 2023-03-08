@@ -8,7 +8,7 @@
 <img src="dark_logo.svg" alt="Dark Logo" width="128" height="128"> <img src="normal_logo.svg" alt="Normal Logo" width="128" height="128"> <img src="light_logo.svg" alt="Light Logo" width="128" height="128">
 
 ## What is Urd?
-Urd is an ecosystem that is built around a 64-bit [ARM](https://www.arm.com/architecture/cpu) microkernel, which is designed to be [Unix-like](https://en.wikipedia.org/wiki/Unix-like). The Urd kernel comes with its own allocator, scheduler and system calls. It's also associated with a customized virutal memory system, device driver interface and file system. Because the kernel is only intended to run on one platform, its implementation should be fairly simple and efficient.
+Urd is an ecosystem that is built around a 32-bit [ARM](https://www.arm.com/architecture/cpu) microkernel, which is designed to be [Unix-like](https://en.wikipedia.org/wiki/Unix-like). The Urd kernel comes with its own allocator, scheduler and system calls. It's also associated with a customized virutal memory system, device driver interface and file system. Because the kernel is only intended to run on one platform, its implementation should be fairly simple and efficient.
 
 Urd also has its own shell, text editor, and resource monitor, among other things. However, it is not intended to create a dedicated compiler for this operating system because building software with the ported [GNU toolchain](https://en.wikipedia.org/wiki/GNU_toolchain) should be adequate. Some functions in [glibc](https://www.gnu.org/software/libc/) may need to be modified in order to conform to the Urd environment.
 

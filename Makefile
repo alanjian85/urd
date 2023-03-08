@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: GPL-3.0
 
 # User should input a prefix of cross-compiler, e.g. make
-# CROSS_COMPILE=riscv64-unknown-linux-gnu-
+# CROSS_COMPILE=arm-none-eabi-
 CC = $(CROSS_COMPILE)gcc
 AS = $(CROSS_COMPILE)as
 LD = $(CROSS_COMPILE)ld

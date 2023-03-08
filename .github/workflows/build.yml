@@ -17,9 +17,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install dependencies
-      run: sudo apt-get install gcc-riscv64-linux-gnu
+      run: sudo apt-get install gcc-arm-none-eabi
     - name: Make
-      run: make CROSS_COMPILE=riscv64-linux-gnu-
+      run: make CROSS_COMPILE=arm-none-eabi-
     - name: Archive production artifacts
       uses: actions/upload-artifact@v3
       with:

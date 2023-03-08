@@ -8,7 +8,7 @@
 
 #include "urd/mmio.h"
 
-#define UART_BASE (0x10000000)
+#define UART_BASE (0x44e09000)
 
 #define UART_RBR (0)
 #define UART_THR (0)
@@ -32,7 +32,9 @@ int uart_init(int baud_rate) {
     if (baud_rate <= 0)
         return -1;
     uart_write_reg(UART_LCR, 0x80); // Enable DLAB
-    // TODO: Investigate how to calculate the appropriate divisor
+    // TODO: Calculate the appropriate divisor from the parameter baud_rate
+    uart_write_reg(UART_DLH, 0x00);
+    uart_write_reg(UART_DLL, 0x1a);
     uart_write_reg(UART_LCR, 0x00); // Disable DLAB
     uart_write_reg(UART_IER, 0x00); // Disable all interrupts
     uart_write_reg(UART_LCR, 0x03); // 8 bit mode, no parity, 1 stop bit
