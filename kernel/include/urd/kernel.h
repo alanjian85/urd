@@ -11,6 +11,6 @@
 noreturn void halt(void);
 
 int kputc(char c);
-int kputs(const char *s);
+int kputs(const char *restrict s);
 
 #endif // URD_KERNEL_KERNEL_H_

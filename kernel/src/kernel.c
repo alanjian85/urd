@@ -15,7 +15,7 @@ int kputc(char c) {
     return uart_putc(c);
 }
 
-int kputs(const char *s) {
+int kputs(const char *restrict s) {
     for (; *s != '\0'; ++s)
         kputc(*s);
     return 0;
