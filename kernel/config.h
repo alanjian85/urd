@@ -4,6 +4,10 @@
 #ifndef URD_KERNEL_CONFIG_H_
 #define URD_KERNEL_CONFIG_H_
 
+#include <stdbool.h>
+
 #define KERNEL_STACK_SIZE 0x1000
+
+#define UART_CRLF true
 
 #endif // URD_KERNEL_CONFIG_H_

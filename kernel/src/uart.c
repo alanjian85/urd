@@ -3,6 +3,7 @@
 
 #include "urd/uart.h"
 
+#include "config.h"
 #include "urd/mmio.h"
 
 #define UART_BASE (0x44e09000)
@@ -26,6 +27,7 @@
 #define uart_write_reg(reg, val) (writew(UART_BASE + ((reg) << 2), (val)))
 
 int uart_init(int baud_rate) {
+    // Avoid dividing by zero and negative divisor
     if (baud_rate <= 0)
         return -1;
     unsigned int divisor = 3000000 / baud_rate;
@@ -46,6 +48,10 @@ int uart_init(int baud_rate) {
 }
 
 int uart_putc(char c) {
+    // Because this function doesn't produce any error currently, the return
+    // value of sending carriage return is simply ignored
+    if (UART_CRLF && c == '\n')
+        uart_putc('\r');
     // Wait the trasmission holding register to be empty
     while ((uart_read_reg(UART_LSR) & UART_LSR_THRE) == 0)
         ;

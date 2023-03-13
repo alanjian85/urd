@@ -12,8 +12,6 @@ void halt(void) {
 }
 
 int kputc(char c) {
-    if (c == '\n')
-        uart_putc('\r');
     return uart_putc(c);
 }
 
