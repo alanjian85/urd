@@ -9,6 +9,15 @@
 
 #include "urd/kernel.h"
 
+extern uint32_t vector_table[8];
+
+int exception_init(void) {
+    // Write the address of the new vector table to the vector base address
+    // register on system control coprocessor
+    asm volatile("mcr p15, 0, %0, c12, c0, 0" : : "r"(&vector_table));
+    return 0;
+}
+
 // TODO: Implement exception handlers
 noreturn void reset(void) {
     halt();
