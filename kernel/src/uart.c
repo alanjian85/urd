@@ -31,7 +31,7 @@ int uart_init(int baud_rate) {
     if (baud_rate <= 0)
         return -1;
     unsigned int divisor = 3000000 / baud_rate;
-    // See if a 16-bit unsigned integer can express the divisor
+    // See if a 16-bit unsigned integer can hold the divisor
     if (divisor > 0xffff)
         return -1;
     uart_write_reg(UART_LCR, 0x80); // Enable DLAB
