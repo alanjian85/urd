@@ -2,12 +2,13 @@
 // SPDX-License-Identifier: GPL-3.0
 
 #include "urd/exception.h"
-#include "urd/kernel.h"
+#include "urd/syscall.h"
 #include "urd/uart.h"
 
 int main(void) {
     exception_init();
     uart_init(115200);
-    asm volatile("svc #0");
+    syscall_init();
+    syscall(0, "Hello world!\n");
     return 0;
 }

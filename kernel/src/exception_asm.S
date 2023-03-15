@@ -5,10 +5,11 @@
     .file "exception_asm.S"
 
     .section .text
-
+/* The vector table must be stored in a executable section, allowing the
+ * processor to jump to an entry in it */
     .globl vector_table
-    /* Since the vector table won't be copied to another address in memory,
-     * using relative branch here is safe */
+/* Since the vector table won't be copied to another address in memory, using
+ * relative branch here is safe */
 vector_table:
     b reset
     b handle_undef

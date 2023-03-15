@@ -25,10 +25,6 @@ noreturn void reset(void) {
 
 __attribute__((interrupt("UNDEF"))) void handle_undef(void) {}
 
-__attribute__((interrupt("SWI"))) void handle_svc(void) {
-    kputs("System call invoked!\n");
-}
-
 __attribute__((interrupt("ABORT"))) void handle_prefetch_abort(void) {}
 
 __attribute__((interrupt("ABORT"))) void handle_data_abort(void) {}

@@ -10,6 +10,9 @@
 /* This is the entry of the kernel */
     .globl _start
 _start:
+/* Enter system mode */
+    cps #31
+
 /* Setup the stack with the specified size */
     ldr sp, =_end
 /* KERNEL_STACK_SIZE must be a enough small value that can fit into the
@@ -32,4 +35,5 @@ _start:
 2:
     bl main
 
+/* Hang after the main function returned */
     b halt
