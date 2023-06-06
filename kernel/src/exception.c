@@ -3,13 +3,10 @@
 
 #include "urd/exception.h"
 
-#include <stdint.h>
-#include <stdnoreturn.h>
-#include <string.h>
-
 #include "urd/kernel.h"
+#include "urd/typedef.h"
 
-extern uint32_t vector_table[8];
+extern u32 vector_table[8];
 
 int exception_init(void) {
     // Write the address of the new vector table to the vector base address
@@ -19,7 +16,7 @@ int exception_init(void) {
 }
 
 // TODO: Implement exception handlers
-noreturn void reset(void) {
+_Noreturn void reset(void) {
     halt();
 }
 

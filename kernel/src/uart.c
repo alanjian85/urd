@@ -5,6 +5,7 @@
 
 #include "config.h"
 #include "urd/mmio.h"
+#include "urd/typedef.h"
 
 #define UART_BASE (0x44e09000)
 

@@ -1,6 +1,8 @@
 // Copyright (C) 2023 Alan Jian (alanjian85@outlook.com)
 // SPDX-License-Identifier: GPL-3.0
 
+#include "urd/syscall.h"
+
 #include "urd/constants.h"
 #include "urd/kernel.h"
 

@@ -4,11 +4,9 @@
 #ifndef URD_KERNEL_KERNEL_H_
 #define URD_KERNEL_KERNEL_H_
 
-#include <stdnoreturn.h>
-
 #define EOF (-1)
 
-noreturn void halt(void);
+_Noreturn void halt(void);
 
 int kputc(char c);
 int kputs(const char *restrict s);

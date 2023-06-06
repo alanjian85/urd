@@ -4,7 +4,7 @@
 #ifndef URD_KERNEL_SYSCALL_H_
 #define URD_KERNEL_SYSCALL_H_
 
-long long int syscall(int number, ...);
+int syscall(int number, ...);
 
 int syscall_init(void);
 

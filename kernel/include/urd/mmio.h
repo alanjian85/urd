@@ -4,16 +4,14 @@
 #ifndef URD_KERNEL_MMIO_H_
 #define URD_KERNEL_MMIO_H_
 
-#include <stdint.h>
+#define readb(reg) (*(volatile u8 *) (uintptr_t) (reg))
+#define readh(reg) (*(volatile u16 *) (uintptr_t) (reg))
+#define readw(reg) (*(volatile u32 *) (uintptr_t) (reg))
+#define readd(reg) (*(volatile u64 *) (uintptr_t) (reg))
 
-#define readb(reg) (*(volatile uint8_t *) (uintptr_t) (reg))
-#define readh(reg) (*(volatile uint16_t *) (uintptr_t) (reg))
-#define readw(reg) (*(volatile uint32_t *) (uintptr_t) (reg))
-#define readd(reg) (*(volatile uint64_t *) (uintptr_t) (reg))
-
-#define writeb(reg, val) (*(volatile uint8_t *) (uintptr_t) (reg) = (val))
-#define writeh(reg, val) (*(volatile uint16_t *) (uintptr_t) (reg) = (val))
-#define writew(reg, val) (*(volatile uint32_t *) (uintptr_t) (reg) = (val))
-#define writed(reg, val) (*(volatile uint64_t *) (uintptr_t) (reg) = (val))
+#define writeb(reg, val) (*(volatile u8 *) (uintptr_t) (reg) = (val))
+#define writeh(reg, val) (*(volatile u16 *) (uintptr_t) (reg) = (val))
+#define writew(reg, val) (*(volatile u32 *) (uintptr_t) (reg) = (val))
+#define writed(reg, val) (*(volatile u64 *) (uintptr_t) (reg) = (val))
 
 #endif // URD_KERNEL_MMIO_H_
