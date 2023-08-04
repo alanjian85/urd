@@ -10,4 +10,5 @@ void *syscall_table[NR_SYSCALLS];
 
 int syscall_init(void) {
     syscall_table[0] = kputs;
+    return 0;
 }

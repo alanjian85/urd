@@ -20,7 +20,7 @@ _start:
     mov r0, #KERNEL_STACK_SIZE
     add sp, r0
 
-/* Zero-out BSS and use early return to tolerate the existence empty BSS section */
+/* Zero-out BSS and use early return to tolerate the existence of empty BSS section */
     ldr r0, =_bss_start
     ldr r1, =_bss_end
     mov r2, #0
