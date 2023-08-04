@@ -6,9 +6,18 @@
 #include "urd/constants.h"
 #include "urd/kernel.h"
 
-void *syscall_table[NR_SYSCALLS];
+typedef struct {
+    void *func;
+    // The number of the arguments of a system call shall not be greater than 7
+    int   argc;
+} syscall_t;
+
+syscall_t syscall_table[NR_SYSCALLS];
 
 int syscall_init(void) {
-    syscall_table[0] = kputs;
+    // Whenever a new system call is added, the macro NR_SYSCALLS in
+    // include/urd/constants.h should also be updated
+    syscall_table[0].func = kputs;
+    syscall_table[0].argc = 1;
     return 0;
 }
